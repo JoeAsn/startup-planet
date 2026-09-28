@@ -36,7 +36,11 @@ app.get("/tiktok/:userId/posts/:postId" , (req , res) => {
   res.json({name : "John"})
 })
 app.get("/menu/:catagory" , (req ,res)=>{
-  res.send(`the Menu category u are requesing is ${req.params.catagory}`)
+  // res.send(`the Menu category u are requesing is ${req.params.catagory}`) ;
+  res.redirect("/foods")
+})
+app.get("/foods" , (req , res)=>{
+  res.send("this is a route that servers a food")
 })
 app.listen(5200, () => {
   console.log("The server is started on port 5200");
